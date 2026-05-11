@@ -36,14 +36,16 @@ Three FULL adjacencies — one to each backbone peer (`isp-pe-1`, `isp-core-2`, 
 
 ```text
 isp-core-1#show ip route ospf | include O IA
-O IA    203.0.113.0 [110/2] via 203.0.113.5, 01:01:14, GigabitEthernet0/0
-O IA    203.0.113.24 [110/2] via 203.0.113.5, 01:01:14, GigabitEthernet0/0
-O IA    203.0.113.28 [110/2] via 203.0.113.5, 01:01:14, GigabitEthernet0/0
+O IA    203.0.113.0 [110/2] via 203.0.113.5, 00:01:03, GigabitEthernet0/0
+O IA    203.0.113.24 [110/2] via 203.0.113.5, 00:01:03, GigabitEthernet0/0
+O IA    203.0.113.28 [110/2] via 203.0.113.5, 00:01:03, GigabitEthernet0/0
+O IA    203.0.113.32 [110/3] via 203.0.113.13, 00:00:53, GigabitEthernet0/1
+O IA    203.0.113.36 [110/3] via 203.0.113.13, 00:00:53, GigabitEthernet0/1
+O IA    203.0.113.40 [110/3] via 203.0.113.13, 00:00:53, GigabitEthernet0/1
 ```
 
-Three Area 1 prefixes appear as `O IA` routes via `isp-pe-1` — Customer A uplink, DNS Area 1 LAN, and Customer B uplink. The `O IA` tag is the visible proof that multi-area OSPF is operating.
+Three Area 1 and three Area 2 prefixes appear as `O IA` routes via `isp-pe-1` and `isp-pe-2`. The `O IA` tag is the visible proof that multi-area OSPF is operating.
 
-> **Known issue:** Area 2 prefixes do not appear here despite being reachable end-to-end (verified in §5). Suspected cause: `isp-pe-2`'s customer-facing interfaces are configured in Area 0 rather than Area 2. To be corrected in the next revision.
 
 ---
 
