@@ -15,7 +15,6 @@ The lab models a single autonomous system (AS 65001) partitioned into three OSPF
 | Network analysis & troubleshooting | [Verification](docs/verification.md) — adjacencies, routing tables, end-to-end paths, convergence demo |
 | Major routing protocols | [OSPF design](docs/ospf-design.md) — multi-area architecture |
 | Cisco IOS | Full running-configs in [`configs/`](configs/) |
-| Automation | Python config templating planned for Phase 4 |
 
 ## Repository contents
 
