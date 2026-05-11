@@ -13,7 +13,7 @@ The lab models a single autonomous system (AS 65001) partitioned into three OSPF
 | IP networking fundamentals | [Addressing plan](docs/ip-addressing-plan.md) — VLSM, /30 links, /32 loopbacks, RFC1918 vs. public space |
 | Application of IP protocols | OSPF, DNS, NAT/PAT, VLAN, inter-VLAN routing — see [configs](configs/) |
 | Network analysis & troubleshooting | [Verification](docs/verification.md) — adjacencies, routing tables, end-to-end paths, convergence demo |
-| Major routing protocols | [OSPF design](docs/ospf-design.md) — multi-area architecture; eBGP planned for Phase 3 |
+| Major routing protocols | [OSPF design](docs/ospf-design.md) — multi-area architecture |
 | Cisco IOS | Full running-configs in [`configs/`](configs/) |
 | Automation | Python config templating planned for Phase 4 |
 
