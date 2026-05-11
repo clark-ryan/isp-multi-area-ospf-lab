@@ -15,11 +15,11 @@
 
 | Device | Interface | IP/Mask | Purpose |
 |---|---|---|---|
-| isp-pe-1 | Lo0 | 10.0.0.1/32 | OSPF router-id, management target |
-| isp-pe-2 | Lo0 | 10.0.0.2/32 | OSPF router-id, management target |
-| isp-core-1 | Lo0 | 10.0.0.3/32 | OSPF router-id, management target |
-| isp-core-2 | Lo0 | 10.0.0.4/32 | OSPF router-id, management target |
-| isp-border-1 | Lo0 | 10.0.0.5/32 | OSPF router-id, future BGP router-id |
+| isp-pe-1 | Loopback 0 | 10.0.0.1/32 | OSPF router-id, management target |
+| isp-pe-2 | Loopback 0 | 10.0.0.2/32 | OSPF router-id, management target |
+| isp-core-1 | Loopback 0 | 10.0.0.3/32 | OSPF router-id, management target |
+| isp-core-2 | Loopback 0 | 10.0.0.4/32 | OSPF router-id, management target |
+| isp-border-1 | Loopback 0 | 10.0.0.5/32 | OSPF router-id, future BGP router-id |
 
 ## ISP backbone P2P links
 

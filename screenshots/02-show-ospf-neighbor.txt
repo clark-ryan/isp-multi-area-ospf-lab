@@ -1,0 +1,77 @@
+isp-pe-1#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.0.0.3          1   FULL/DR         00:00:31    203.0.113.6     GigabitEthernet0/2
+
+isp-core-1#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.0.0.1          1   FULL/BDR        00:00:35    203.0.113.5     GigabitEthernet0/0
+10.0.0.4          1   FULL/DR         00:00:35    203.0.113.13    GigabitEthernet0/1
+10.0.0.5          1   FULL/DR         00:00:35    203.0.113.18    GigabitEthernet0/2
+
+isp-core-1#show ip route ospf | include O IA
+O IA    203.0.113.0 [110/2] via 203.0.113.5, 01:01:14, GigabitEthernet0/0
+O IA    203.0.113.24 [110/2] via 203.0.113.5, 01:01:14, GigabitEthernet0/0
+O IA    203.0.113.28 [110/2] via 203.0.113.5, 01:01:14, GigabitEthernet0/0
+
+isp-pe-1#show ip ospf database
+            OSPF Router with ID (10.0.0.1) (Process ID 1)
+
+                Router Link States (Area 0)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+10.0.0.1        10.0.0.1        167         0x80000006 0x00a2f4 2
+10.0.0.5        10.0.0.5        163         0x80000008 0x00f3c8 3
+10.0.0.3        10.0.0.3        163         0x8000000a 0x0070c9 4
+10.0.0.4        10.0.0.4        162         0x8000000a 0x00f631 4
+10.0.0.2        10.0.0.2        162         0x80000009 0x00bd7d 5
+
+                Net Link States (Area 0)
+Link ID         ADV Router      Age         Seq#       Checksum
+203.0.113.6     10.0.0.3        168         0x80000003 0x0042af
+203.0.113.21    10.0.0.5        163         0x80000005 0x00c118
+203.0.113.18    10.0.0.5        163         0x80000006 0x00d705
+203.0.113.13    10.0.0.4        162         0x80000005 0x0008dc
+203.0.113.10    10.0.0.4        162         0x80000006 0x001ec9
+
+                Summary Net Link States (Area 0)
+Link ID         ADV Router      Age         Seq#       Checksum
+203.0.113.0     10.0.0.1        197         0x80000007 0x00db37
+203.0.113.24    10.0.0.1        197         0x80000008 0x00e910
+203.0.113.28    10.0.0.1        197         0x80000009 0x00bf35
+
+                Router Link States (Area 1)
+
+Link ID         ADV Router      Age         Seq#       Checksum Link count
+10.0.0.1        10.0.0.1        206         0x80000006 0x0080b2 3
+
+                Summary Net Link States (Area 1)
+Link ID         ADV Router      Age         Seq#       Checksum
+10.0.0.1        10.0.0.1        197         0x8000001b 0x0072bb
+203.0.113.4     10.0.0.1        197         0x8000001c 0x008a6f
+203.0.113.12    10.0.0.1        157         0x8000001d 0x0041ae
+10.0.0.3        10.0.0.1        157         0x8000001e 0x0062c5
+203.0.113.16    10.0.0.1        157         0x8000001f 0x0015d4
+203.0.113.20    10.0.0.1        147         0x80000020 0x00f4ee
+203.0.113.8     10.0.0.1        147         0x80000021 0x006b83
+10.0.0.4        10.0.0.1        147         0x80000022 0x005ac7
+10.0.0.5        10.0.0.1        147         0x80000023 0x004ed1
+10.0.0.2        10.0.0.1        147         0x80000024 0x0074ac
+203.0.113.32    10.0.0.1        147         0x80000025 0x007c55
+203.0.113.36    10.0.0.1        147         0x80000026 0x00527a
+203.0.113.40    10.0.0.1        147         0x80000027 0x00289f
+
+C:\>ping 203.0.113.37
+
+Pinging 203.0.113.37 with 32 bytes of data:
+
+Request timed out.
+Reply from 203.0.113.37: bytes=32 time<1ms TTL=250
+Reply from 203.0.113.37: bytes=32 time<1ms TTL=250
+Reply from 203.0.113.37: bytes=32 time<1ms TTL=250
+
+Ping statistics for 203.0.113.37:
+    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
