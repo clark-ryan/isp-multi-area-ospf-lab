@@ -1,0 +1,184 @@
+Building configuration...
+
+Current configuration : 2412 bytes
+!
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname isp-pe-2
+!
+!
+no profinet
+enable secret 5 $1$mERr$tKAvQPi4nwql8vUTe8ogt/
+!
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+username admin secret 5 $1$mERr$tKAvQPi4nwql8vUTe8ogt/
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.0.0.2 255.255.255.255
+!
+interface FastEthernet0/1
+ no switchport
+ ip address 203.0.113.38 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/2
+ no switchport
+ ip address 203.0.113.42 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/3
+ shutdown
+!
+interface FastEthernet0/4
+ shutdown
+!
+interface FastEthernet0/5
+ shutdown
+!
+interface FastEthernet0/6
+ shutdown
+!
+interface FastEthernet0/7
+ shutdown
+!
+interface FastEthernet0/8
+ shutdown
+!
+interface FastEthernet0/9
+ shutdown
+!
+interface FastEthernet0/10
+ shutdown
+!
+interface FastEthernet0/11
+ shutdown
+!
+interface FastEthernet0/12
+ shutdown
+!
+interface FastEthernet0/13
+ shutdown
+!
+interface FastEthernet0/14
+ shutdown
+!
+interface FastEthernet0/15
+ shutdown
+!
+interface FastEthernet0/16
+ shutdown
+!
+interface FastEthernet0/17
+ shutdown
+!
+interface FastEthernet0/18
+ shutdown
+!
+interface FastEthernet0/19
+ shutdown
+!
+interface FastEthernet0/20
+ shutdown
+!
+interface FastEthernet0/21
+ shutdown
+!
+interface FastEthernet0/22
+ shutdown
+!
+interface FastEthernet0/23
+ shutdown
+!
+interface FastEthernet0/24
+ shutdown
+!
+interface GigabitEthernet0/1
+ no switchport
+ ip address 203.0.113.9 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ no switchport
+ ip address 203.0.113.33 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ passive-interface FastEthernet0/1
+ passive-interface FastEthernet0/2
+ passive-interface GigabitEthernet0/2
+ network 203.0.113.8 0.0.0.3 area 0
+ network 0.0.0.0 255.255.255.255 area 0
+ network 203.0.113.32 0.0.0.3 area 2
+ network 203.0.113.36 0.0.0.3 area 2
+ network 203.0.113.40 0.0.0.3 area 2
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+banner motd ^CAuthorized access only^C
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 5 0
+ password 7 08314D5D1A0E0A05165A5E57
+ login
+!
+line aux 0
+!
+line vty 0 4
+ exec-timeout 5 0
+ login local
+ transport input ssh
+line vty 5 15
+ exec-timeout 5 0
+ login local
+ transport input ssh
+!
+!
+!
+!
+end
