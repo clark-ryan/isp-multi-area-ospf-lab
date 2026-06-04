@@ -4,7 +4,7 @@ I simulated an ISP network in Cisco Packet Tracer demonstrating multi-area OSPF,
 
 ![Topology](docs/topology.png)
 
-The lab models a single autonomous system (AS 65001) partitioned into three OSPF areas — one backbone (Area 0) and two customer-access areas — serving four subscribers including a small business with multiple VLANs. Provider Edge routers act as Area Border Routers. The border router is reserved for eBGP in Phase 3.
+The lab models a single autonomous system (AS 65001) partitioned into three OSPF areas — one backbone (Area 0) and two customer-access areas — serving four subscribers including a small business with multiple VLANs. Provider Edge routers act as Area Border Routers.
 
 ## Skills demonstrated
 
