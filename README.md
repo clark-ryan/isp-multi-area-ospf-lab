@@ -1,6 +1,6 @@
 # ISP Multi-Area OSPF Lab
 
-A simulated ISP network in Cisco Packet Tracer demonstrating multi-area OSPF, hierarchical addressing, and customer-edge service delivery across two access regions.
+I simulated an ISP network in Cisco Packet Tracer demonstrating multi-area OSPF, hierarchical addressing, and customer-edge service delivery across two access regions.
 
 ![Topology](docs/topology.png)
 
